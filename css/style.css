@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+
 :root  {
     --color-main: rgba(13, 150, 160, 1);
+    --color-bg-light: #eef7f8;
+    --color-footer: #555555;
 }
 
 /* base */
@@ -27,7 +30,6 @@ body {
         display: none !important;
     }
 }
-
 @media (min-width: 768px) {
     .sp {
         display: none !important;
@@ -45,6 +47,7 @@ img {
     max-width: 880px;
     margin-inline: auto;
 }
+
 /* header */
 .header {
     width: 100%;
@@ -55,11 +58,6 @@ img {
     top: 0;
     left: 0;
     z-index: 999;
-}
-@media (max-width: 767px) {
-    .header {
-        padding-inline: 20px;
-    }
 }
 .header .inner {
     display: flex;
@@ -72,11 +70,20 @@ img {
     align-items: center;
     font-size: 18px;
     transition: opacity 0.4s;
+    text-decoration: none;
+    color: inherit;
 }
 @media (any-hover: hover) {
     .header__logo a:hover {
         opacity: 0.7;
     }
+}
+.header__logo-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px; /* テキストとの隙間（お好みで調整してください） */
+    object-fit: contain;
+    display: inline-block;
 }
 .header__nav ul {
     display: flex;
@@ -89,9 +96,16 @@ img {
     align-items: center;
     font-size: 14px;
     transition: opacity 0.4s;
+    text-decoration: none;
+    color: inherit;
 }
 @media (any-hover: hover) {
     .header__nav ul li a:hover {
         opacity: 0.7;
+    }
+}
+@media (max-width: 767px) {
+    .header {
+        padding-inline: 20px;
     }
 }
