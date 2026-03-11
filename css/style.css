@@ -4,7 +4,7 @@
 :root  {
     --color-main: rgba(13, 150, 160, 1);
     --color-bg-light: #eef7f8;
-    --color-footer: #555555;
+    --color-black: rgba(80, 80, 80, 1);
 }
 
 /* base */
@@ -18,7 +18,7 @@ html {
 body {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 700;
-    color: rgba(80, 80, 80, 1);
+    color: var(--color-black);
     font-size: 17px;
     line-height: calc(30 / 17);
     letter-spacing: 0;
@@ -46,6 +46,11 @@ img {
 .inner {
     max-width: 880px;
     margin-inline: auto;
+}
+@media (max-width: 767px) {
+    .inner {
+        max-width: 335px;
+    }
 }
 
 /* header */
@@ -113,29 +118,44 @@ img {
     }
 }
 
-/* 共通の余白設定（基本はPCサイズ） */
-section {
-    padding: 100px 20px;
-}
-h2.section-title,
-.section-title h2 {
+/* --- 共通セクションタイトル --- */
+.section-title {
     text-align: center;
-    color: var(--color-main);
-    font-size: 24px;
     margin-bottom: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-h2.section-title::before, h2.section-title::after,
-.section-title h2::before, .section-title h2::after {
-    content: "🐾";
-    margin: 0 10px;
 }
 
+.section-title h2 {
+    color: var(--color-main);
+    font-size: 24px;
+    font-weight: 700;
+    display: inline-flex; /* 文字の長さに幅を合わせる */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section-title h2::before,
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 25.5px;  /* 画像を表示したい幅 */
+    height: 25px; /* 画像を表示したい高さ */
+    background-image: url("../images/paws-01.png"); /* 画像のパス */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* スマホ用の調整 */
 @media (max-width: 767px) {
-    section {
-        padding: 60px 20px;
+    .section-title h2 {
+        font-size: 20px;
+        gap: 10px;
+    }
+    .section-title h2::before,
+    .section-title h2::after {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -160,7 +180,7 @@ h2.section-title::before, h2.section-title::after,
 
 .mv__catch h1 {
     font-size: 25px;
-    color: #333;
+    color: var(--color-black);
 }
 
 .mv__catch h2 {
@@ -174,7 +194,8 @@ h2.section-title::before, h2.section-title::after,
     .mv__contents {
         top: auto;
         bottom: 0;
-        aspect-ratio: 311 / 148;
+        width: calc(311 / 375 * 100%);
+        height: calc(148 / 550 * 100%);
         padding-bottom: 0;
         padding-left: 0; 
         transform: none;
@@ -202,6 +223,7 @@ h2.section-title::before, h2.section-title::after,
     aspect-ratio: 84 / 77;
     width: calc(84 / 1080 * 100%);
     z-index: -1;
+    opacity: 0.7;
 }
 .greeting h1 {
     color: var(--color-main);
@@ -220,13 +242,108 @@ br[sp] {
 }
 
 @media (max-width: 767px) {
+    .greeting {
+        padding: 50px 0;
+        position: relative;
+    }
+    .greeting .inner {
+        margin-inline: auto;
+    }
     .greeting h1 {
-        font-size: 22px;
+        font-size: 25px;      /* 目標に近いサイズに少し小さく */
+        line-height: calc(35 / 25);
+        text-align: center;   /* 見出しは中央 */
+        margin-bottom: 17px;
     }
+
     .greeting p {
-        text-align: left;
+        text-align: left;     /* 本文は左寄せ */
+        font-size: 16px;      /* 読みやすいサイズに調整 */
+        line-height: calc(30 / 16);     /* 行間を少し広げてスッキリさせる */
+        margin-top: 0;       /* 余計なパディングをリセット */
+        font-weight: 500;
     }
+
+    .bg-paws {
+        top: calc(275 / 395 * 100%); 
+        left: calc(277 / 375 * 100%);
+        aspect-ratio: 68 / 63;
+        width: calc(68 / 375 * 100%);
+        opacity: 0.8;
+    }
+
     br[sp] {
         display: block;
+    }
+}
+
+/* --- 強み --- */
+.strength {
+    background-color: var(--color-bg-light); /* 💡消えていた背景色を復活！ */
+    padding: 60px 20px 68px;
+}
+
+.strength .section-title h2 {
+    color: var(--color-black);
+    font-size: 25px;
+}
+.strength-item {
+    margin-top: 44px;
+    margin-bottom: 50px;
+}
+.strength-item__image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* 💡画面が縮んだ時に文字が画像にぶつかるのを防ぐバリア */
+}
+/* 💡1つ目を「左テキスト・右画像」にするため、odd（奇数）に戻します */
+.strength__items .strength__item:nth-child(odd) .strength-item__image {
+    flex-direction: row-reverse;
+}
+.strength-item__image picture {
+    width: 50%;
+}
+.strength-item__image img {
+    width: 100%;
+    aspect-ratio: 440 / 247;
+    object-fit: cover;
+}
+.strength-item__textarea {
+    width: 45%;
+    text-align: left;
+    color: var(--color-black);
+}
+.strength-item__textarea h3 {
+    font-size: 22px;
+    color: var(--color-black);
+    line-height: calc(33 / 22);
+}
+.strength-item__textarea p {
+    font-weight: 500;
+    margin-top: 19px;
+    font-size: 18px;
+    line-height: calc(33 / 18);
+}
+.strength__items .strength__item:nth-child(2) .strength-item__textarea {
+    position: relative;
+    left: 2px;
+}
+
+/* スマホ(SP)の時の強み上書き */
+@media (max-width: 767px) {
+    .strength-item {
+        margin-bottom: 40px;
+    }
+    .strength-item__image {
+        display: block; /* 横並び解除 */
+    }
+    .strength-item__image picture,
+    .strength-item__image .strength-item__textarea {
+        width: 100%;
+    }
+    .strength-item__textarea h3 {
+        font-size: 18px;
+        margin-top: 15px;
     }
 }
