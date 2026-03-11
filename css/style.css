@@ -280,7 +280,7 @@ br[sp] {
 /* --- 強み --- */
 .strength {
     background-color: var(--color-bg-light); /* 💡消えていた背景色を復活！ */
-    padding: 60px 20px 68px;
+    padding: 60px 20px 18px;
 }
 
 .strength .section-title h2 {
@@ -345,5 +345,53 @@ br[sp] {
     .strength-item__textarea h3 {
         font-size: 18px;
         margin-top: 15px;
+    }
+}
+/* --- サービス --- */
+.service {
+    padding: 60px 20px 80px; /* セクション全体の上下の余白 */
+}
+.service__contents {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px; /* タイトルと画像の間の距離 */
+    max-width: 880px; /* 💡 お手本に合わせて、全体の幅を少し狭くします */
+    margin-inline: auto;
+}
+.service-item {
+    width: calc(260 / 880 * 100%); /* 3つ並べるための幅 */
+}
+.service-item__image img {
+    aspect-ratio: calc(260 / 200);
+    width: 100%;
+}
+.service-item__textarea {
+    text-align: center; /* タイトルを中央揃え */
+    color: var(--color-black);
+}
+.service-item__textarea h3 {
+    font-size: 20px;
+    line-height: calc(25 / 20);
+    margin-top: 19px;
+}
+.service-item__textarea p {
+    font-size: 17px;
+    line-height: calc(30 / 17);
+    text-align: left; /* お手本に合わせて文章は左揃え（中央が良い場合は center に） */
+    font-weight: 500;
+margin-top: 8px;
+}
+
+/* スマホ(SP)の時のサービス上書き */
+@media (max-width: 767px) {
+    .service__contents {
+        display: block; /* 横並び解除 */
+    }
+    .service-item {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .service-item:last-child {
+        margin-bottom: 0;
     }
 }
