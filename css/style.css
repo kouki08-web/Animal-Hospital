@@ -530,3 +530,71 @@ margin-top: 8px;
         font-size: 22px; /* スマホでは電話番号を少し小さく */
     }
 }
+/* --- お問い合わせ --- */
+.contact {
+    background-color: var(--color-bg-light);
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+.contact__title {
+    margin-bottom: 30px;
+}
+.contact__lead {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.contact__lead p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: calc(30 / 16);
+}
+
+.contact__form {
+    max-width: 740px;
+    margin-inline: auto;
+}
+.form-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+.form-group label {
+    width: 200px; /* 左側のラベルの幅 */
+    flex-shrink: 0;
+    font-weight: 500;
+    padding-top: 15px; /* 入力欄と高さを合わせる */
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #fff; /* 入力欄の背景を白に */
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+}
+.form-group textarea {
+    height: 200px;
+    resize: vertical; /* 縦方向のみリサイズ可能に */
+}
+.form-submit {
+    text-align: center;
+    margin-top: 40px;
+}
+.btn-submit {
+    background-color: var(--color-main);
+    color: #fff;
+    border: none;
+    padding: 15px 80px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px; /* 角を少し丸く */
+    cursor: pointer;
+    transition: opacity 0.3s;
+    letter-spacing: 0.1em;
+}
+@media (any-hover: hover) {
+    .btn-submit:hover {
+        opacity: 0.8;
+    }
+}
