@@ -395,7 +395,7 @@ margin-top: 8px;
 .news {
     background-color: var(--color-bg-light);
     padding-top: 63px;
-    padding-bottom: 68px;
+    padding-bottom: 63px;
 }
 .news__title {
     margin-top: -4px;
@@ -444,5 +444,89 @@ margin-top: 8px;
     .news__item dd:nth-of-type(1) {
         width: auto;
         margin-bottom: 5px; /* 💡 スマホの時は縦並びになるので、この余白は正解です！ */
+    }
+}
+/* --- アクセス --- */
+.access {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.access__title {
+    margin-bottom: 40px;
+}
+.access__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 42px; /* 地図とテキストの上端を揃える */
+}
+.access__image img {
+    width: calc(358 / 880 * 100vw);
+    aspect-ratio: calc(440 / 300);
+}
+.access__textarea h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.access__info {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-black); /* メールの下の横線 */
+    margin-bottom: 20px;
+}
+.access__info div {
+    display: flex;
+    align-items: baseline; /* 文字の下端を綺麗に揃える */
+    margin-bottom: 10px;
+}
+.access__info div:last-child {
+    margin-bottom: 0;
+}
+.access__info dt {
+    width: 4em; /* 「電話：」などの幅を固定 */
+    flex-shrink: 0;
+    font-size: 18px;
+}
+/* 郵便番号だけ少し幅の扱いを変える */
+.access__info .postal dt {
+    width: auto;
+    margin-right: 1em;
+}
+.access__info .tel dd {
+    color: var(--color-main);
+    font-size: 25px;
+    font-weight: 700;
+}
+/* 診療時間・休診日のブロック */
+.access__time {
+    padding-bottom: 20px; /* ★線の上の隙間を作る */
+    border-bottom: 1px solid var(--color-black); /* ★下線を引く */
+}
+
+.access__time p {
+    line-height: calc(35 / 17); /* 診療時間・休診日の行間 */
+}
+
+/* スマホ(SP)の時のアクセス上書き */
+@media (max-width: 767px) {
+    .access {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .access__content {
+        display: block; /* 横並び解除 */
+    }
+    .access__image {
+        width: 100%;
+        margin-bottom: 30px; /* スマホの時は地図の下に余白を作る */
+    }
+    .access__textarea {
+        width: 100%;
+    }
+    .access__textarea h3 {
+        font-size: 18px;
+    }
+    .access__info .tel dd {
+        font-size: 22px; /* スマホでは電話番号を少し小さく */
     }
 }
