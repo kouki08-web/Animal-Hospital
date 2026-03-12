@@ -4,7 +4,7 @@
 :root  {
     --color-main: rgba(13, 150, 160, 1);
     --color-bg-light: #eef7f8;
-    --color-black: rgba(80, 80, 80, 1);
+    --color-black: #707070;
 }
 
 /* base */
@@ -121,12 +121,11 @@ img {
 /* --- 共通セクションタイトル --- */
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .section-title h2 {
-    color: var(--color-main);
-    font-size: 24px;
+    color: var(--color-black);
+    font-size: 25px;
     font-weight: 700;
     display: inline-flex; /* 文字の長さに幅を合わせる */
     align-items: center;
@@ -283,10 +282,6 @@ br[sp] {
     padding: 60px 20px 18px;
 }
 
-.strength .section-title h2 {
-    color: var(--color-black);
-    font-size: 25px;
-}
 .strength-item {
     margin-top: 44px;
     margin-bottom: 50px;
@@ -349,12 +344,13 @@ br[sp] {
 }
 /* --- サービス --- */
 .service {
-    padding: 60px 20px 80px; /* セクション全体の上下の余白 */
+    padding-top: 60px;
+    padding-bottom: 59px;
 }
 .service__contents {
     display: flex;
     justify-content: space-between;
-    margin-top: 45px; /* タイトルと画像の間の距離 */
+    margin-top: 44px; /* タイトルと画像の間の距離 */
     max-width: 880px; /* 💡 お手本に合わせて、全体の幅を少し狭くします */
     margin-inline: auto;
 }
@@ -393,5 +389,60 @@ margin-top: 8px;
     }
     .service-item:last-child {
         margin-bottom: 0;
+    }
+}
+/* --- お知らせ --- */
+.news {
+    background-color: var(--color-bg-light);
+    padding-top: 63px;
+    padding-bottom: 68px;
+}
+.news__title {
+    margin-top: -4px;
+    margin-bottom: 40px;
+}
+.news__list {
+    border-top: 1px solid var(--color-main);
+    top: -84px;
+}
+.news__item {
+    border-bottom: 1px solid var(--color-black);
+    display: flex;
+    align-items: center;
+}
+.news__item dt {
+    position: relative;
+    width: calc(92 / 880 * 100vw);
+    aspect-ratio: calc(95 / 25);
+    font-size: 17px;
+    line-height: calc(25 / 17);
+    padding: 18px 0 17px 18.5px;
+}
+.news__item dd:nth-of-type(1) {
+    position: relative;
+    color: var(--color-main);
+    width: calc(160 / 880 * 100vw);
+    aspect-ratio: calc(160 / 25);
+    font-size: 20px;
+    line-height: calc(25 / 20);
+    padding: 18px 0 17px 25px;
+}
+.news__item dd:nth-of-type(2) {
+    position: relative;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: calc(30 / 17);
+    padding: 15px 0 15px 36px;
+}
+
+@media (max-width: 767px) {
+    .news__item {
+        display: block;
+        padding: 20px 0;
+    }
+    .news__item dt,
+    .news__item dd:nth-of-type(1) {
+        width: auto;
+        margin-bottom: 5px; /* 💡 スマホの時は縦並びになるので、この余白は正解です！ */
     }
 }
