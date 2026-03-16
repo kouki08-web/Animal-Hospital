@@ -127,7 +127,7 @@ img {
     color: var(--color-black);
     font-size: 25px;
     font-weight: 700;
-    display: inline-flex; /* 文字の長さに幅を合わせる */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -137,9 +137,9 @@ img {
 .section-title h2::after {
     content: "";
     display: block;
-    width: 25.5px;  /* 画像を表示したい幅 */
-    height: 25px; /* 画像を表示したい高さ */
-    background-image: url("../images/paws-01.png"); /* 画像のパス */
+    width: 25.5px;
+    height: 25px;
+    background-image: url("../images/paws-01.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -148,13 +148,13 @@ img {
 /* スマホ用の調整 */
 @media (max-width: 767px) {
     .section-title h2 {
-        font-size: 20px;
-        gap: 10px;
+        font-size: 25px;
+        gap: 20.5px;
     }
     .section-title h2::before,
     .section-title h2::after {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
     }
 }
 
@@ -208,6 +208,7 @@ img {
         line-height: calc(40 / 30);
     }
 }
+
 /* --- ご挨拶 --- */
 .greeting {
     position: relative;
@@ -243,23 +244,24 @@ br[sp] {
 @media (max-width: 767px) {
     .greeting {
         padding: 50px 0;
+        padding-bottom: 37px;
         position: relative;
     }
     .greeting .inner {
         margin-inline: auto;
     }
     .greeting h1 {
-        font-size: 25px;      /* 目標に近いサイズに少し小さく */
+        font-size: 25px;
         line-height: calc(35 / 25);
-        text-align: center;   /* 見出しは中央 */
+        text-align: center;
         margin-bottom: 17px;
     }
 
     .greeting p {
-        text-align: left;     /* 本文は左寄せ */
-        font-size: 16px;      /* 読みやすいサイズに調整 */
-        line-height: calc(30 / 16);     /* 行間を少し広げてスッキリさせる */
-        margin-top: 0;       /* 余計なパディングをリセット */
+        text-align: left;
+        font-size: 16px;
+        line-height: calc(30 / 16);
+        margin-top: 0;
         font-weight: 500;
     }
 
@@ -276,140 +278,261 @@ br[sp] {
     }
 }
 
+/* =========================================================
+   ここから下は変更・修正エリア
+   ========================================================= */
+
 /* --- 強み --- */
 .strength {
-    background-color: var(--color-bg-light); /* 💡消えていた背景色を復活！ */
+    background-color: var(--color-bg-light);
     padding: 60px 20px 18px;
+}
+@media (max-width: 767px) {
+    .strength {
+        padding-top: 47px;
+        padding-bottom: 0.05px;
+
+    }
+}
+@media (max-width: 767px) {
+    .strength__title {
+        font-size: 25px;
+        margin-bottom: 38px;
+    }
 }
 
 .strength-item {
     margin-top: 44px;
     margin-bottom: 50px;
 }
+@media (max-width: 767px) {
+    .strength-item {
+        margin-top: 20px;
+    }
+}
+
 .strength-item__image {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px; /* 💡画面が縮んだ時に文字が画像にぶつかるのを防ぐバリア */
+    gap: 20px;
 }
-/* 💡1つ目を「左テキスト・右画像」にするため、odd（奇数）に戻します */
+@media (max-width: 767px) {
+    .strength-item__image {
+        display: block;
+    }
+}
+
 .strength__items .strength__item:nth-child(odd) .strength-item__image {
     flex-direction: row-reverse;
 }
+
 .strength-item__image picture {
     width: 50%;
 }
+@media (max-width: 767px) {
+    .strength-item__image picture {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
 .strength-item__image img {
     width: 100%;
     aspect-ratio: 440 / 247;
     object-fit: cover;
+}
+@media (max-width: 767px) {
+    .strength-item__image img {
+        width: 100%;
+        aspect-ratio: 335 / 200;
+    }
 }
 .strength-item__textarea {
     width: 45%;
     text-align: left;
     color: var(--color-black);
 }
+@media (max-width: 767px) {
+    .strength-item__textarea {
+        width: 100%;
+        text-align: center;
+        
+    }
+}
+
+.strength__items .strength__item:nth-child(2) .strength-item__textarea {
+    position: relative;
+    left: 2px;
+}
+@media (max-width: 767px) {
+    .strength__items .strength__item:nth-child(2) .strength-item__textarea {
+        left: 0;
+    }
+}
+
 .strength-item__textarea h3 {
     font-size: 22px;
     color: var(--color-black);
     line-height: calc(33 / 22);
 }
+@media (max-width: 767px) {
+    .strength-item__textarea h3 {
+        font-size: 20px;
+        margin-top: 27px;
+    }
+}
+
 .strength-item__textarea p {
     font-weight: 500;
     margin-top: 19px;
     font-size: 18px;
     line-height: calc(33 / 18);
 }
-.strength__items .strength__item:nth-child(2) .strength-item__textarea {
-    position: relative;
-    left: 2px;
+@media (max-width: 767px) {
+    .strength-item__textarea p {
+        font-size: 16px;
+        line-height: calc(30 / 16);
+        margin-top: 7px;
+        text-align: left;
+        margin-bottom: -9PX;
+    }
 }
 
-/* スマホ(SP)の時の強み上書き */
-@media (max-width: 767px) {
-    .strength-item {
-        margin-bottom: 40px;
-    }
-    .strength-item__image {
-        display: block; /* 横並び解除 */
-    }
-    .strength-item__image picture,
-    .strength-item__image .strength-item__textarea {
-        width: 100%;
-    }
-    .strength-item__textarea h3 {
-        font-size: 18px;
-        margin-top: 15px;
-    }
-}
 /* --- サービス --- */
 .service {
     padding-top: 60px;
-    padding-bottom: 59px;
+    padding-bottom: 57px;
 }
+@media (max-width: 767px) {
+    .service {
+        padding: 38px 0 1px;
+    }
+}
+.service__title h2 {
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .service__title h2 {
+        margin-top: -1px;
+        margin-bottom: -0.5px;
+    }
+}
+
 .service__contents {
     display: flex;
     justify-content: space-between;
-    margin-top: 44px; /* タイトルと画像の間の距離 */
-    max-width: 880px; /* 💡 お手本に合わせて、全体の幅を少し狭くします */
+    margin-top: 44px;
+    max-width: 880px;
     margin-inline: auto;
 }
-.service-item {
-    width: calc(260 / 880 * 100%); /* 3つ並べるための幅 */
+@media (max-width: 767px) {
+    .service__contents {
+        display: block;
+        margin-top: 30px;
+    }
 }
+
+.service-item {
+    width: calc(260 / 880 * 100%);
+}
+@media (max-width: 767px) {
+    .service-item {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
 .service-item__image img {
     aspect-ratio: calc(260 / 200);
     width: 100%;
 }
+@media (max-width: 767px) {
+    .service-item__image img {
+    aspect-ratio: calc(335 / 200);
+    width: 100%;
+    margin-top: 39px;
+    }   
+}
 .service-item__textarea {
-    text-align: center; /* タイトルを中央揃え */
+    text-align: center;
     color: var(--color-black);
 }
+
 .service-item__textarea h3 {
     font-size: 20px;
     line-height: calc(25 / 20);
     margin-top: 19px;
 }
+@media (max-width: 767px) {
+    .service-item__textarea h3 {
+        font-size: 20px;
+        margin-top: 33.5px;
+    }
+}
+
 .service-item__textarea p {
     font-size: 17px;
     line-height: calc(30 / 17);
-    text-align: left; /* お手本に合わせて文章は左揃え（中央が良い場合は center に） */
+    text-align: left;
     font-weight: 500;
-margin-top: 8px;
+    margin-top: 8px;
+}
+@media (max-width: 767px) {
+    .service-item__textarea p {
+        font-size: 16px;
+        margin-top: 11px;
+        line-height: calc(30 16);
+    }
 }
 
-/* スマホ(SP)の時のサービス上書き */
-@media (max-width: 767px) {
-    .service__contents {
-        display: block; /* 横並び解除 */
-    }
-    .service-item {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-    .service-item:last-child {
-        margin-bottom: 0;
-    }
-}
 /* --- お知らせ --- */
 .news {
     background-color: var(--color-bg-light);
-    padding-top: 63px;
-    padding-bottom: 63px;
+    padding-top: 59px;
+    padding-bottom: 66px;
 }
+@media (max-width: 767px) {
+    .news {
+        padding: 50px 20px;
+    }
+}
+
 .news__title {
-    margin-top: -4px;
     margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+    .news__title {
+        margin-top: -11px;
+        margin-bottom: 30px;
+    }
+}
+
 .news__list {
     border-top: 1px solid var(--color-main);
-    top: -84px;
+    top: 2px;
+    position: relative;
 }
+@media (max-width: 767px) {
+    .news__list {
+        top: 10px;
+    }
+}
+
 .news__item {
     border-bottom: 1px solid var(--color-black);
     display: flex;
     align-items: center;
+    margin-top: -1px;
 }
+@media (max-width: 767px) {
+    .news__item {
+        display: grid;
+        padding: 20px 0;
+        padding-top: 3px;
+    }
+}
+
 .news__item dt {
     position: relative;
     width: calc(92 / 880 * 100vw);
@@ -418,6 +541,21 @@ margin-top: 8px;
     line-height: calc(25 / 17);
     padding: 18px 0 17px 18.5px;
 }
+@media (max-width: 767px) {
+    .news__item dt {
+        display: inline-block; /* 日付とカテゴリを横並びに */
+        width: auto;
+        padding: 0;
+        font-size: 17px;
+        aspect-ratio: auto;
+        left: calc(10 / 375 * 100vw);
+        width: 100vw;
+        margin-top: 28px;
+        aspect-ratio: auto !important; /* 枠の固定を解除して改行を許可 */
+        width: auto !important;  
+    }
+}
+
 .news__item dd:nth-of-type(1) {
     position: relative;
     color: var(--color-main);
@@ -427,160 +565,310 @@ margin-top: 8px;
     line-height: calc(25 / 20);
     padding: 18px 0 17px 25px;
 }
+@media (max-width: 767px) {
+    .news__item dd:nth-of-type(1) {
+        aspect-ratio: auto !important; /* 枠の固定を解除 */
+        width: 100% !important;
+        display: inline-block;
+        padding: 0;
+        margin-bottom: 10px;
+        font-size: 20px;
+        aspect-ratio: auto;
+        left: calc(10 / 375 * 100vw);
+        width: 100vw;
+        margin-top: 2px;
+        aspect-ratio: auto !important; /* 枠の固定を解除して改行を許可 */
+        width: auto !important;
+    }
+}
+
 .news__item dd:nth-of-type(2) {
     position: relative;
     font-weight: 500;
-    font-size: 17px;
-    line-height: calc(30 / 17);
+    font-size: 16px;
+    line-height: calc(24 / 16);
     padding: 15px 0 15px 36px;
 }
-
 @media (max-width: 767px) {
-    .news__item {
+    .news__item dd:nth-of-type(2) {
         display: block;
-        padding: 20px 0;
-    }
-    .news__item dt,
-    .news__item dd:nth-of-type(1) {
-        width: auto;
-        margin-bottom: 5px; /* 💡 スマホの時は縦並びになるので、この余白は正解です！ */
+        font-size: 16px;
+        line-height: calc(24 / 16);
+        padding: 0;
+        left: calc(10 / 375 * 100vw);
+        width: 100vw;
+        margin-top: -5px;
+        margin-bottom: 6px;
+        aspect-ratio: auto !important; /* 枠の固定を解除して改行を許可 */
+        width: auto !important; 
     }
 }
+
 /* --- アクセス --- */
 .access {
     padding-top: 60px;
     padding-bottom: 60px;
 }
+@media (max-width: 767px) {
+    .access {
+        padding: 50px 20px;
+    }
+}
+
 .access__title {
     margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+    .access__title {
+        margin-bottom: 30px;
+    }
+}
+
 .access__content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 42px; /* 地図とテキストの上端を揃える */
+    margin-top: 42px;
 }
+@media (max-width: 767px) {
+    .access__content {
+        display: block;
+        margin-top: 30px;
+    }
+}
+
 .access__image img {
     width: calc(358 / 880 * 100vw);
     aspect-ratio: calc(440 / 300);
 }
+@media (max-width: 767px) {
+    .access__image {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .access__image img {
+        width: 100%;
+        aspect-ratio: auto;
+    }
+}
+
+.access__textarea {
+    width: calc(484 / 1080 * 100%);
+}
+@media (max-width: 767px) {
+    .access__textarea {
+        width: 100%;
+    }
+}
+
 .access__textarea h3 {
     font-size: 22px;
-    margin-top: 0;
-    margin-bottom: 15px;
+    margin-top: -2.5px;
 }
+@media (max-width: 767px) {
+    .access__textarea h3 {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
 .access__info {
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--color-black); /* メールの下の横線 */
-    margin-bottom: 20px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--color-black);
 }
+@media (max-width: 767px) {
+    .access__info {
+        padding-bottom: 15px;
+    }
+}
+
 .access__info div {
     display: flex;
-    align-items: baseline; /* 文字の下端を綺麗に揃える */
-    margin-bottom: 10px;
+    align-items: baseline;
 }
+@media (max-width: 767px) {
+    .access__info div {
+        margin-bottom: 10px;
+    }
+}
+
 .access__info div:last-child {
     margin-bottom: 0;
 }
+
 .access__info dt {
-    width: 4em; /* 「電話：」などの幅を固定 */
     flex-shrink: 0;
-    font-size: 18px;
 }
-/* 郵便番号だけ少し幅の扱いを変える */
+
 .access__info .postal dt {
     width: auto;
-    margin-right: 1em;
+    margin-top: 10px;
+    font-size: 18px;
 }
+@media (max-width: 767px) {
+    .access__info .postal dt,
+    .access__info .postal dd {
+        font-size: 14px;
+        margin-top: 0;
+    }
+}
+
 .access__info .tel dd {
     color: var(--color-main);
     font-size: 25px;
     font-weight: 700;
+    margin-top: 8.5px;
 }
-/* 診療時間・休診日のブロック */
-.access__time {
-    padding-bottom: 20px; /* ★線の上の隙間を作る */
-    border-bottom: 1px solid var(--color-black); /* ★下線を引く */
+@media (max-width: 767px) {
+    .access__info .tel {
+        align-items: center;
+    }
+    .access__info .tel dt {
+        font-size: 14px;
+    }
+    .access__info .tel dd {
+        font-size: 24px;
+        margin-top: 0; /* PCの余白を消す */
+    }
+}
+
+.access__info .mail dd {
+    font-size: 18px;
+    margin-top: 6px;
+}
+@media (max-width: 767px) {
+    .access__info .mail {
+        margin-top: 5px;
+    }
+    .access__info .mail dt,
+    .access__info .mail dd {
+        font-size: 14px;
+        margin-top: 0;
+    }
 }
 
 .access__time p {
-    line-height: calc(35 / 17); /* 診療時間・休診日の行間 */
+    font-size: 17px;
+    line-height: calc(40 / 17); 
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-black);
+}
+@media (max-width: 767px) {
+    .access__time p {
+        font-size: 14px;
+        margin-top: 15px;
+        padding-left: 0;
+    }
 }
 
-/* スマホ(SP)の時のアクセス上書き */
-@media (max-width: 767px) {
-    .access {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-    .access__content {
-        display: block; /* 横並び解除 */
-    }
-    .access__image {
-        width: 100%;
-        margin-bottom: 30px; /* スマホの時は地図の下に余白を作る */
-    }
-    .access__textarea {
-        width: 100%;
-    }
-    .access__textarea h3 {
-        font-size: 18px;
-    }
-    .access__info .tel dd {
-        font-size: 22px; /* スマホでは電話番号を少し小さく */
-    }
-}
 /* --- お問い合わせ --- */
 .contact {
     background-color: var(--color-bg-light);
     padding-top: 60px;
     padding-bottom: 80px;
 }
-.contact__title {
-    margin-bottom: 30px;
+@media (max-width: 767px) {
+    .contact {
+        padding: 50px 20px;
+    }
 }
+
 .contact__lead {
     text-align: center;
-    margin-bottom: 40px;
 }
 .contact__lead p {
     font-size: 16px;
     font-weight: 500;
     line-height: calc(30 / 16);
+    margin-top: 19px;
+    margin-bottom: 9px;
 }
 
 .contact__form {
-    max-width: 740px;
+    max-width: 100%;
     margin-inline: auto;
 }
+
 .form-group {
     display: flex;
     margin-bottom: 20px;
 }
+@media (max-width: 767px) {
+    .form-group {
+        display: block; /* 縦並びに */
+        margin-bottom: 20px;
+    }
+}
+
 .form-group label {
-    width: 200px; /* 左側のラベルの幅 */
+    width: 200px;
     flex-shrink: 0;
-    font-weight: 500;
-    padding-top: 15px; /* 入力欄と高さを合わせる */
+    padding-top: 15px;
+    font-size: 20px;
 }
-.form-group input,
-.form-group textarea {
+@media (max-width: 767px) {
+    .form-group label {
+        display: block;
+        width: 100%;
+        padding-top: 0;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+.form-group input {
     width: 100%;
-    padding: 15px;
     border: none;
-    background-color: #fff; /* 入力欄の背景を白に */
+    background-color: #fff;
     font-family: inherit;
-    font-size: 16px;
     outline: none;
+    margin-top: 30px;
+    aspect-ratio: calc(711 / 40);
+    width: calc(711 / 880 * 100vw);
 }
+@media (max-width: 767px) {
+    .form-group input {
+        width: 100%; /* 画面幅いっぱい */
+        box-sizing: border-box; /* パディングを含めて幅を計算 */
+        margin-top: 0;
+        aspect-ratio: auto; /* PCの比率を解除 */
+        height: 45px;
+        padding: 10px;
+        border-radius: 3px;
+    }
+}
+
 .form-group textarea {
     height: 200px;
-    resize: vertical; /* 縦方向のみリサイズ可能に */
+    resize: vertical;
+    border: none;
+    background-color: #fff;
+    font-family: inherit;
+    outline: none;
+    aspect-ratio: calc(711 / 300);
+    width: calc(711 / 1080 * 100vw);
 }
+@media (max-width: 767px) {
+    .form-group textarea {
+        width: 100%; /* 画面幅いっぱい */
+        box-sizing: border-box;
+        margin-top: 0;
+        aspect-ratio: auto; /* PCの比率を解除 */
+        height: 150px;
+        padding: 10px;
+        border-radius: 3px;
+    }
+}
+
 .form-submit {
     text-align: center;
     margin-top: 40px;
 }
+
 .btn-submit {
     background-color: var(--color-main);
     color: #fff;
@@ -588,7 +876,7 @@ margin-top: 8px;
     padding: 15px 80px;
     font-size: 18px;
     font-weight: 700;
-    border-radius: 5px; /* 角を少し丸く */
+    border-radius: 5px;
     cursor: pointer;
     transition: opacity 0.3s;
     letter-spacing: 0.1em;
@@ -596,5 +884,101 @@ margin-top: 8px;
 @media (any-hover: hover) {
     .btn-submit:hover {
         opacity: 0.8;
+    }
+}
+
+/* --- フッター --- */
+.footer {
+    background-color: #555555;
+    color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+@media (max-width: 767px) {
+    .footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.footer__nav {
+    margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+    .footer__nav {
+        margin-bottom: 25px;
+    }
+}
+
+.footer__nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 15px;
+}
+@media (max-width: 767px) {
+    .footer__nav ul {
+        column-gap: 15px;
+        row-gap: 10px;
+    }
+}
+
+.footer__nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+@media (max-width: 767px) {
+    .footer__nav a {
+        font-size: 13px;
+    }
+}
+@media (any-hover: hover) {
+    .footer__nav a:hover {
+        opacity: 0.7;
+    }
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 30px;
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .footer__bottom {
+        padding-top: 25px;
+    }
+}
+
+.copyright {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.footer__sns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sns-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+@media (any-hover: hover) {
+    .sns-icon:hover {
+        opacity: 0.7;
     }
 }
