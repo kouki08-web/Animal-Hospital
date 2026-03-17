@@ -232,41 +232,54 @@
                 </div>
             </div>
         </section>
-
+    <!-- contact -->
         <section id="contact" class="contact">
             <div class="inner">
                 <div class="contact__title section-title">
                     <h2>お問い合わせ</h2>
                 </div>
-                <div class="contact__lead">
-                    <p>
-                        ご予約やご質問などお気軽にお問い合わせください。<br>お問い合わせいただいてから3日以内の変身となります。
-                    </p>
+                <div class="contact__content">
+                    <div class="contact__text">
+                        <p>ご予約やご質問などお気軽にお問い合わせください。<br>お問い合わせいただいてから3日以内の変身となります。</p>
+                    </div>
+                    <form action="">
+                        <div class="contact__form">
+                            <dl class="form-area">
+                                <dt>
+                                    <label for="your-name">お名前</label>
+                                </dt>
+                                <dd>
+                                    <input type="text" name="your-name" id="your-name" class="form-control">
+                                </dd>
+                            </dl>
+                            <dl class="form-area">
+                                <dt>
+                                    <label for="your-email">メールアドレス</label>
+                                </dt>
+                                <dd>
+                                    <input type="text" name="your-email" id="your-email" class="form-control">
+                                </dd>
+                            </dl>
+                            <dl class="form-area">
+                                <dt>
+                                    <label for="your-message">内　容</label>
+                                </dt>
+                                <dd>
+                                    <textarea name="your-message" id="your-message" class="form-control form-textarea" cols="30" rows="10"></textarea>
+                                </dd>
+                            </dl>
+                            <div class="form-submit-area">
+                                <input type="submit" class="form-submit" value="送 信">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                
-                <form class="contact__form" action="#" method="post">
-                    <div class="form-group">
-                        <label for="name">お名前</label>
-                        <input type="text" id="name" name="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">メールアドレス</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">内容</label>
-                        <textarea id="message" name="message"></textarea>
-                    </div>
-                    <div class="form-submit">
-                        <button type="submit" class="btn-submit">送信</button>
-                    </div>
-                </form>
             </div>
+            
         </section>
 
     </main>
     <footer class="footer">
-        <div class="inner">
             <nav class="footer__nav">
                 <ul>
                     <li><a href="#">トップ</a></li>
@@ -282,13 +295,12 @@
                 <p class="copyright">&copy;Copyright0000 滑石きたむら動物病院</p>
                 
                 <ul class="footer__sns">
-                    <li><a href="#" class="sns-icon">Tw</a></li>
-                    <li><a href="#" class="sns-icon">Ig</a></li>
-                    <li><a href="#" class="sns-icon">Yt</a></li>
-                    <li><a href="#" class="sns-icon">Li</a></li>
+                    <li><a href="#" class="sns-icon"><img src="./images/icon_twitter.svg" alt=""></a></li>
+                    <li><a href="#" class="sns-icon"><img src="./images/icon_facebook.svg" alt=""></a></li>
+                    <li><a href="#" class="sns-icon"><img src="./images/icon_youtube.svg" alt=""></a></li>
+                    <li><a href="#" class="sns-icon"><img src="./images/icon_instagram.svg" alt=""></a></li>
                 </ul>
             </div>
-        </div>
     </footer>
 </body>
 </html>

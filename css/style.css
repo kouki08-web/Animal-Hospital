@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 
 :root  {
-    --color-main: rgba(13, 150, 160, 1);
+    --color-main: #0D96A0;
     --color-bg-light: #eef7f8;
     --color-black: #707070;
 }
@@ -601,7 +601,7 @@ br[sp] {
 
 /* --- アクセス --- */
 .access {
-    padding-top: 60px;
+    padding-top: 61px;
     padding-bottom: 60px;
 }
 @media (max-width: 767px) {
@@ -623,7 +623,7 @@ br[sp] {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 42px;
+    margin-top: 43px;
 }
 @media (max-width: 767px) {
     .access__content {
@@ -762,131 +762,138 @@ br[sp] {
 
 /* --- お問い合わせ --- */
 .contact {
-    background-color: var(--color-bg-light);
-    padding-top: 60px;
-    padding-bottom: 80px;
+    padding: 60px 30px 80px;
+    background: #0D96A01A;
 }
 @media (max-width: 767px) {
     .contact {
-        padding: 50px 20px;
+        padding: 62px 30px 80px;
     }
 }
-
-.contact__lead {
+.contact__content {
+    margin-top: 20px;
+}
+@media (max-width: 767px) {
+    .contact__content {
+        margin-top: 43px;
+    }
+}
+.contact__text {
     text-align: center;
 }
-.contact__lead p {
-    font-size: 16px;
+@media (max-width: 767px) {
+    .contact__text {
+        text-align: left;
+        display: flex;
+        justify-content: center;
+    }
+}
+.contact__text p {
+    font-size: 17px;
+    line-height: calc(30 / 17);
     font-weight: 500;
-    line-height: calc(30 / 16);
-    margin-top: 19px;
-    margin-bottom: 9px;
-}
-
-.contact__form {
-    max-width: 100%;
-    margin-inline: auto;
-}
-
-.form-group {
-    display: flex;
-    margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-    .form-group {
-        display: block;
-        margin-bottom: 20px;
-    }
-}
-
-.form-group label {
-    width: 200px;
-    flex-shrink: 0;
-    padding-top: 15px;
-    font-size: 20px;
-}
-@media (max-width: 767px) {
-    .form-group label {
-        display: block;
-        width: 100%;
-        padding-top: 0;
-        margin-bottom: 10px;
+    .contact__text p {
         font-size: 16px;
+        line-height: calc(30 / 16);
     }
 }
-
-.form-group input {
-    width: 100%;
-    border: none;
-    background-color: #fff;
-    font-family: inherit;
-    outline: none;
+.contact__form {
+    margin-top: 39px;
+}
+@media (max-width: 767px) {
+    .contact__form {
+        margin-top: 34px;
+    }
+}
+.form-area {
+    display: flex;
+} 
+@media (max-width: 767px) {
+    .form-area {
+        flex-direction: column;
+        row-gap: 2px;
+    }
+}
+.form-area:not(:first-of-type) {
     margin-top: 30px;
-    aspect-ratio: calc(711 / 40);
-    width: calc(711 / 880 * 100vw);
 }
 @media (max-width: 767px) {
-    .form-group input {
-        width: 100%;
-        box-sizing: border-box;
-        margin-top: 0;
-        aspect-ratio: auto;
-        height: 45px;
-        padding: 10px;
-        border-radius: 3px;
+    .form-area:not(:first-of-type) {
+        margin-top: 17px;
     }
 }
-
-.form-group textarea {
-    height: 200px;
-    resize: vertical;
-    border: none;
-    background-color: #fff;
-    font-family: inherit;
-    outline: none;
-    aspect-ratio: calc(711 / 300);
-    width: calc(711 / 1080 * 100vw);
+.form-area dt {
+    width: 169px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    line-height: calc(33 / 20);
 }
 @media (max-width: 767px) {
-    .form-group textarea {
+    .form-area dt {
         width: 100%;
-        box-sizing: border-box;
-        margin-top: 0;
-        aspect-ratio: auto;
-        height: 150px;
-        padding: 10px;
-        border-radius: 3px;
+        height: initial;
+        font-size: 18px;
+        line-height: calc(33 / 18);
     }
 }
-
+.form-area dd {
+    flex: 1;
+}
+.form-control {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    padding: 0 10px;
+}
+@media (max-width: 767px) {
+    .form-control {
+        height: 50px;
+    }
+}
+.form-textarea {
+    height: 300px;
+    padding: 10px;
+}
+.form-submit-area {
+    margin-top: 42px;
+    display: flex;
+    justify-content: center;
+}
 .form-submit {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.btn-submit {
-    background-color: var(--color-main);
+    width: 200px;
+    height: 50px;
+    background: var(--color-main);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    line-height: calc(33 / 25);
     color: #fff;
-    border: none;
-    padding: 15px 80px;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 5px;
     cursor: pointer;
-    transition: opacity 0.3s;
-    letter-spacing: 0.1em;
+    text-align: center;
 }
-@media (any-hover: hover) {
-    .btn-submit:hover {
-        opacity: 0.8;
+@media (max-width: 767px) {
+    .form-submit {
+        width: 335px;
+        height: 41px;
+        font-size: 20px;
     }
 }
-
+.form-submit:hover {
+    background: #fff;
+    color: var(--color-main);
+    border: 2px solid var(--color-main);
+    transition: all 0.4s;
+}
 /* --- フッター --- */
 .footer {
     background-color: #555555;
-    color: #ffffff;
-    padding-top: 60px;
+    color: var(--color-bg-light);
+    padding-top: 66px;
     padding-bottom: 50px;
 }
 @media (max-width: 767px) {
@@ -897,7 +904,6 @@ br[sp] {
 }
 
 .footer__nav {
-    margin-bottom: 30px;
 }
 @media (max-width: 767px) {
     .footer__nav {
@@ -910,21 +916,13 @@ br[sp] {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 15px;
-}
-@media (max-width: 767px) {
-    .footer__nav ul {
-        column-gap: 15px;
-        row-gap: 10px;
-    }
+    gap: 14px;
 }
 
 .footer__nav a {
-    color: #ffffff;
+    color: var(--color-bg-light);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 20px;
     transition: opacity 0.3s;
 }
 @media (max-width: 767px) {
@@ -939,37 +937,37 @@ br[sp] {
 }
 
 .footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-top: 30px;
-    text-align: center;
-}
-@media (max-width: 767px) {
-    .footer__bottom {
-        padding-top: 25px;
-    }
+    border-top: 1px solid #fff;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 20px;
+    width: calc(737 / 1080 * 100vw);
 }
 
 .copyright {
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 15px;
+    font-size: 20px;
+    margin-top: 5px;
 }
 
 .footer__sns {
+    margin-top: -12px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 12px; /* SNSアイコン同士の隙間 */
 }
 
 .sns-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
+    width: 20px;  /* アイコンの大きさを整える */
+    height: 20px;
     transition: opacity 0.3s;
 }
 @media (any-hover: hover) {
