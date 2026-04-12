@@ -55,6 +55,7 @@ img {
 .ib-span {
     display: inline-block;
 }
+
 /* header */
 .header {
     width: 100%;
@@ -64,7 +65,6 @@ img {
     top: 0;
     left: 0;
     z-index: 999;
-    padding-inline: 3rem;
 }
 
 .header .inner {
@@ -171,9 +171,9 @@ img {
     top: 51.5%;
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.702);
-    left: 0; 
+    left: 0;
     width: calc(492 / 1080 * 100vw);
-    height: calc(210 / 1080 * 100vw); 
+    height: calc(210 / 1080 * 100vw);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -205,7 +205,7 @@ img {
         top: auto;
         bottom: 0;
         width: calc(311 / 375 * 100vw);
-        height: calc(148 / 375 * 100vw); 
+        height: calc(148 / 375 * 100vw);
         padding-left: 2rem;
         transform: none;
     }
@@ -221,21 +221,22 @@ img {
         margin-left: 0;
     }
 }
+
 /* --- ご挨拶 --- */
 .greeting {
     position: relative;
     text-align: center;
-    padding: 6rem 2rem 6rem;
+    padding: 6rem 0 6rem;
 }
 .greeting .inner {
     position: relative;
 }
 .bg-paws {
     position: absolute;
-    top: calc(195 / 284 * 100%); 
+    top: calc(195 / 284 * 100%);
     right: calc(-5 / 880 * 100%);
     aspect-ratio: 84 / 77;
-    width: calc(84 / 880 * 100%);
+    width: calc(80 / 880 * 100%);
     height: auto;
     z-index: -1;
     opacity: 0.7;
@@ -264,8 +265,7 @@ img {
 }
 @media (max-width: 767px) {
     .greeting {
-        padding: 5rem 0 0;
-        padding-bottom: 3.7rem;
+        padding: 5rem 0 3.7rem;
         position: relative;
     }
     .greeting .inner {
@@ -275,19 +275,16 @@ img {
         font-size: 2.5rem;
         line-height: calc(35 / 25);
         text-align: center;
-        margin-bottom: 1.7rem;
     }
-
     .greeting p {
         text-align: left;
         font-size: 1.6rem;
         line-height: calc(30 / 16);
-        margin-top: 0;
+        margin-top: 1.7rem;
         font-weight: 500;
     }
-
     .bg-paws {
-        top: calc(285 / 375 * 100%); 
+        top: calc(285 / 375 * 100%);
         right: calc(30 / 375 * 100%);
         aspect-ratio: 68 / 63;
         width: calc(68 / 375 * 100%);
@@ -303,7 +300,7 @@ img {
     padding: 6rem 0 6.7rem;
     background: rgba(13, 150, 160, 0.1);
 }
-.strength-item {
+.strength__items {
     margin-top: 4.4rem;
 }
 .strength-item__image {
@@ -324,19 +321,13 @@ img {
     color: var(--color-black);
     flex: 1;
 }
-.strength__item:nth-child(2) .strength-item__textarea p {
-    width: 100%;
-    position: relative;
-    left: 0.3rem;
-}
 .strength__item:nth-child(2) {
-    margin-top: calc(50 / 1080 * 100vw);
+    margin-top: 5rem;
 }
-.strength__item:nth-child(2) .strength-item__textarea h3 {
-    width: 100%;
-    position: relative;
-    left: 0.3rem;
+.strength__item:nth-child(3) {
+    margin-top: 5rem;
 }
+
 .strength-item__textarea h3 {
     font-size: 2.2rem;
     color: var(--color-black);
@@ -348,61 +339,45 @@ img {
     font-size: 1.8rem;
     line-height: calc(33 / 18);
 }
-.strength__item:nth-child(3) .strength-item__textarea p {
-    width: 99.9%;
+@media (min-width: 768px) {
+    .strength__item:nth-child(3) .strength-item__textarea p {
+        width: 99.9%; 
+    }
 }
-.strength__item:nth-child(3) {
-    margin-top: 5rem;
-}
-
 @media (max-width: 767px) {
     .strength {
-        padding: 4.7rem 0 3.5rem ;
+        padding: 4.7rem 0 3.5rem;
     }
     .strength__title {
         font-size: 2.5rem;
     }
-    .strength-item:nth-child(1) {
+    .strength__items {
         margin-top: 3.7rem;
     }
-    .strength-item:nth-child(2) {
+    .strength__item:nth-child(2) {
         margin-top: 4.1rem;
     }
-    .strength-item:nth-child(3) {
-        margin-top: 4.3rem;
-    }
-    .strength__item:nth-child(2) .strength-item__textarea h3 {
-        position: relative;
-        left: 0.4rem;
-    }
-    .strength__item:nth-child(2) .strength-item__textarea p {
-        position: relative;
-        width: 100%;
-        left: 0;
-    }
-    .strength__item:nth-child(3) .strength-item__textarea p {
-        position: relative;
-        right: 0.8rem;
-        width: 95%;
+    .strength__item:nth-child(3) {
+        margin-top: 4.1rem;
     }
     .strength-item__image {
         display: block;
     }
     .strength-item__image-wrap {
         width: 100%;
-        margin-bottom: 1.3rem;
         aspect-ratio: 335 / 200;
     }
     .strength-item__textarea {
         width: 100%;
         text-align: center;
+        margin-top: 2.8rem; 
     }
     .strength__items .strength__item:nth-child(2) .strength-item__textarea {
-        width: calc(335 / 345 * 100%);
+        width: 100%;
+        text-align: center;
     }
     .strength-item__textarea h3 {
         font-size: 2rem;
-        margin-top: 2.7rem;
     }
     .strength-item__textarea p {
         font-size: 1.6rem;
@@ -415,7 +390,6 @@ img {
     }
 }
 /* --- サービス --- */
-
 .service {
     padding: 6rem 0 5.9rem;
 }
@@ -432,25 +406,21 @@ img {
 
 .service__contents {
     display: flex;
-    justify-content: space-between;
     margin-top: 4.4rem;
     gap: calc(50 / 880 * 100%);
 }
 
 @media (max-width: 767px) {
     .service__contents {
-        display: block;
+        display: flex;
+        flex-direction: column;
         margin-top: 3.95rem;
+        gap: 3.85rem;
     }
 }
 
-@media (max-width: 767px) {
-    .service-item {
-        width: 100%;
-    }
-    .service-item + .service-item {
-        margin-top: calc(105 / 880 * 100%); /* 要素間にのみ margin-top を設定 */
-    }
+.service-item {
+    width: 100%;
 }
 
 .service-item__image {
@@ -459,7 +429,7 @@ img {
 
 @media (max-width: 767px) {
     .service-item__image {
-    aspect-ratio: 335 / 200;
+        aspect-ratio: 335 / 200;
     }
 }
 
@@ -489,13 +459,21 @@ img {
 
 @media (max-width: 767px) {
     .service-item__textarea p {
-    font-size: 1.6rem;
-    line-height: calc(30 / 16);
-    margin-top: 0.8rem;
-    width: fit-content;  /* 中身の文章に合わせて箱の幅を自動調整 */
-    margin-left: auto;   /* 左側の余白を自動 */
-    margin-right: auto;
-    text-align: left;
+        font-size: 1.6rem;
+        line-height: calc(30 / 16);
+        margin-top: 0.8rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+}
+@media (max-width: 767px) {
+    .strength__item:nth-child(3) .strength-item__textarea p:last-of-type {
+        width: 95%; /* 画像の数値に合わせるならこのくらい */
+        margin-inline: auto;
+        position: relative;
+        right: 0.8rem; /* 元のコードにあった微調整を戻す場合 */
     }
 }
 /* --- お知らせ --- */
@@ -508,21 +486,14 @@ img {
         padding: 3.9rem 0 5rem;
     }
 }
-.news-title h2 {
-    margin-bottom: 0; /* 子要素のマージンは削除 */
-}
-@media (max-width: 767px) {
-    .news-title h2 {
-        margin-bottom: 0;
-    }
-}
+
 .news__contents {
     border-top: 0.1rem solid var(--color-black);
-    margin-top: 4.1rem; /* 必要に応じて 4.6rem + 4.0rem などを合算して margin-top だけで制御 */
+    margin-top: 4.1rem;
 }
 @media (max-width: 767px) {
     .news__contents {
-        margin-top: 4.0rem;
+        margin-top: 4.1rem;
         width: 100%;
     }
 }
@@ -532,7 +503,7 @@ img {
 .news__item {
     display: flex;
     align-items: center;
-    padding: 1.8rem 1.85rem 1.1rem;
+    padding: 1.6rem 1.85rem 1.3rem;
     column-gap: calc(25 / 880 * 100%);
 }
 @media (max-width: 767px) {
@@ -556,35 +527,33 @@ img {
     font-size: 1.7rem;
     line-height: calc(25 / 17);
     padding-top: 0.2rem;
-} 
+}
 @media (max-width: 767px) {
     .news-item__date time {
-    font-size: 1.7rem;
-    line-height: calc(25 / 17);
-    padding-top: 0.2rem;
+        font-size: 1.7rem;
+        line-height: calc(25 / 17);
+        padding-top: 0.2rem;
     }
 }
 .news-item__title {
     width: 18.4rem;
+    padding-left: calc(3 / 880 * 100%);
 }
 @media (max-width: 767px) {
     .news-item__title {
-    width: initial;
+        width: initial;
     }
 }
 .news-item__title h3 {
     font-size: 2rem;
     line-height: calc(25 / 20);
     color: var(--color-main);
-    position: relative;
-    left: 0.2rem;
 }
 @media (max-width: 767px) {
     .news-item__title h3 {
-    font-size: 2rem;
-    line-height: calc(25 / 20);
-    color: var(--color-main);
-    position: relative;
+        font-size: 2rem;
+        line-height: calc(25 / 20);
+        color: var(--color-main);
     }
 }
 .news-item__text {
@@ -592,25 +561,21 @@ img {
 }
 @media (max-width: 767px) {
     .news-item__text {
-    margin-top: 0.6rem;
-}
+        margin-top: 0.6rem;
+    }
 }
 .news-item__text p {
     font-size: 1.7rem;
     line-height: calc(30 / 17);
     font-weight: 500;
-    margin-top: -0.6rem;
-    position: relative;
-    left: 0.3rem;
+    padding-left: calc(5 / 880 * 100%);
 }
 @media (max-width: 767px) {
     .news-item__text p {
-    width: 98%;
-    font-size: 1.6rem;
-    line-height: calc(24 / 16);
-    margin-top: 0;
-    position: relative;
-    left: -0.1rem;
+        width: 98%;
+        font-size: 1.6rem;
+        line-height: calc(24 / 16);
+        margin-top: 0;
     }
 }
 
@@ -623,12 +588,13 @@ img {
         padding: 4.0rem 0 5rem;
     }
 }
+/* [修正] .access__contents の margin-top でタイトルとコンテンツ間の余白を管理（外側→内側）。 */
 .access__contents {
     margin-top: 4.2rem;
 }
 @media (max-width: 767px) {
     .access__contents {
-        margin-top: 3.8rem;
+        margin-top: 4.1rem;
     }
 }
 .access-item {
@@ -646,7 +612,6 @@ img {
 }
 @media (max-width: 767px) {
     .access-item__map {
-        margin-top: 0.4rem;
         width: 100%;
     }
 }
@@ -685,7 +650,6 @@ img {
     .access-item__address p {
         font-size: 1.6rem;
         line-height: calc(24 / 16);
-        margin-top: -0.1rem;
     }
 }
 .access-item__tel {
@@ -728,10 +692,6 @@ img {
     .access-item__mail {
         font-size: 1.6rem;
         font-weight: 500;
-    }
-}
-@media (max-width: 767px) {
-    .access-item__mail {
         margin-top: 0.3rem;
     }
 }
@@ -745,7 +705,6 @@ img {
     .access-item__mail a {
         font-size: 1.6rem;
         line-height: calc(24 / 16);
-        
     }
 }
 @media (any-hover: hover) {
@@ -776,6 +735,7 @@ img {
         line-height: calc(30 / 16);
     }
 }
+
 /* --- お問い合わせ --- */
 .contact {
     padding: 5.8rem 0 8rem;
@@ -786,6 +746,7 @@ img {
         padding: 3.9rem 0 4.95rem;
     }
 }
+/* [修正] .contact__content の margin-top でタイトルとコンテンツ間の余白を管理（外側→内側）。 */
 .contact__content {
     margin-top: 2rem;
 }
@@ -816,6 +777,7 @@ img {
         margin-top: 0;
     }
 }
+/* [修正] .contact__form の margin-top でテキストとフォーム間の余白を管理（外側→内側）。 */
 .contact__form {
     margin-top: 3.9rem;
 }
@@ -826,11 +788,14 @@ img {
 }
 .form-area {
     display: flex;
-} 
+}
 @media (max-width: 767px) {
     .form-area {
         flex-direction: column;
-        row-gap: 0.2rem;
+        /* [修正] row-gap を削除し、SP 縦並び時の dt・dd 間の間隔は
+                 dt の padding-bottom で管理する（外側→内側）。
+                 label に margin-top を持たせる「内側→外側」パターンを廃止。 */
+        row-gap: 0;
     }
 }
 .form-area:not(:first-of-type) {
@@ -839,14 +804,6 @@ img {
 @media (max-width: 767px) {
     .form-area:not(:first-of-type) {
         margin-top: 1.7rem;
-    }
-}
-.form-area label{
-    margin-top: 0.5rem
-}
-@media (max-width: 767px) {
-    .form-area label {
-        margin-top: 0;
     }
 }
 .form-area dt {
@@ -863,6 +820,9 @@ img {
         height: initial;
         font-size: 1.8rem;
         line-height: calc(33 / 18);
+        /* [修正] SP での dt→dd 間の余白を dt の padding-bottom で管理（外側→内側）。
+                 label に margin-top を指定するパターンを廃止。 */
+        padding-bottom: 0.2rem;
     }
 }
 .form-area dd {
@@ -888,6 +848,8 @@ img {
     word-break: break-word;
     resize: none;
 }
+/* [修正] .form-submit-area の margin-top でフォーム本体とボタン間の余白を管理（外側→内側）。
+         子要素 .form-submit に margin-top を持たせるパターンを廃止。 */
 .form-submit-area {
     margin-top: 4.9rem;
     display: flex;
@@ -895,6 +857,7 @@ img {
     width: 100%;
     text-align: center;
 }
+
 /* --- 送信ボタン共通設定 --- */
 .form-submit {
     width: 20rem;
@@ -908,20 +871,18 @@ img {
     color: var(--color-bg-light);
     cursor: pointer;
     transition: all 0.4s;
-    border: 0.1rem solid var(--color-main); /* 0.2remに統一 */
+    border: 0.1rem solid var(--color-main);
     box-sizing: border-box;
     margin-inline: auto;
 }
 
-/* --- スマホ専用設定（hoverを無効化） --- */
 @media (max-width: 767px) {
     .form-submit {
         width: 33.5rem;
         height: 4.1rem;
         font-size: 2rem;
-        margin-top: 0;
+        /* [修正] margin-top: 0 を削除。ボタン上の余白は親 .form-submit-area の margin-top で管理済み。 */
     }
-    /* スマホでタップしても背景や文字色が変わらないように元の色を強制指定 */
     .form-submit:hover {
         background: var(--color-main) !important;
         color: var(--color-bg-light) !important;
@@ -929,7 +890,6 @@ img {
     }
 }
 
-/* --- PC専用設定（hoverを有効化） --- */
 @media (any-hover: hover) {
     .form-submit:hover {
         background: var(--color-bg-light);
@@ -937,6 +897,7 @@ img {
         border-color: var(--color-main);
     }
 }
+
 /* --- フッター --- */
 .footer {
     background-color: var(--color-black);
@@ -945,7 +906,7 @@ img {
 }
 @media (max-width: 767px) {
     .footer {
-        padding-top: 4.4rem;
+        padding-top: 4.5rem;
         padding-bottom: 5rem;
     }
 }
@@ -986,11 +947,11 @@ img {
     margin-top: 1.8rem;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 2rem;
+    padding-top: 2.8rem;
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
     max-width: 74rem;
 }
 @media (max-width: 767px) {
@@ -1001,24 +962,23 @@ img {
         padding-top: 1.5rem;
     }
 }
-
 .copyright {
     font-size: 2rem;
-    line-height: calc(33 /20);
+    line-height: calc(33 / 20);
     width: 100%;
     text-align: center;
     justify-content: center;
-    margin-top: 0.8rem;
 }
 @media (max-width: 767px) {
     .copyright {
         font-size: 1.6rem;
         line-height: calc(33 / 16);
         text-align: center;
-        margin-top: 0rem;
     }
-
 }
+
+/* [修正] PC での .footer__sns との間隔は親 .footer__bottom の gap で管理。
+         SP のみ .footer__sns の margin-top で個別管理（gap: 0 のため）。 */
 .footer__sns {
     display: flex;
     justify-content: center;
@@ -1028,7 +988,7 @@ img {
 @media (max-width: 767px) {
     .footer__sns {
         margin-top: 3rem;
-        gap: calc(56 / 345 * 100%)
+        gap: calc(56 / 345 * 100%);
     }
 }
 
