@@ -55,6 +55,11 @@ img {
 .ib-span {
     display: inline-block;
 }
+@media (max-width: 767px) {
+    .ib-span {
+        display: inline;
+    }
+}
 
 /* header */
 .header {
@@ -234,7 +239,7 @@ img {
 .bg-paws {
     position: absolute;
     top: calc(195 / 284 * 100%);
-    right: calc(-5 / 880 * 100%);
+    right: max(calc(-5 / 880 * 100%), calc(2rem - (100vw - 100%) / 2));
     aspect-ratio: 84 / 77;
     width: calc(80 / 880 * 100%);
     height: auto;
@@ -252,16 +257,6 @@ img {
     line-height: calc(33 / 18);
     margin-top: 1.5rem;
     font-weight: 500;
-}
-@media (max-width: 900px) {
-    .greeting h2 {
-        font-size: 2.7rem;
-        line-height: calc(45 / 27);
-    }
-    .greeting p {
-        font-size: 1.5rem;
-        line-height: calc(30 / 15);
-    }
 }
 @media (max-width: 767px) {
     .greeting {
@@ -300,7 +295,7 @@ img {
     padding: 6rem 0 6.7rem;
     background: rgba(13, 150, 160, 0.1);
 }
-.strength__items {
+.strength__contents {
     margin-top: 4.4rem;
 }
 .strength-item__image {
@@ -351,7 +346,7 @@ img {
     .strength__title {
         font-size: 2.5rem;
     }
-    .strength__items {
+    .strength__contents {
         margin-top: 3.7rem;
     }
     .strength__item:nth-child(2) {
@@ -588,7 +583,6 @@ img {
         padding: 4.0rem 0 5rem;
     }
 }
-/* [修正] .access__contents の margin-top でタイトルとコンテンツ間の余白を管理（外側→内側）。 */
 .access__contents {
     margin-top: 4.2rem;
 }
@@ -746,12 +740,11 @@ img {
         padding: 3.9rem 0 4.95rem;
     }
 }
-/* [修正] .contact__content の margin-top でタイトルとコンテンツ間の余白を管理（外側→内側）。 */
-.contact__content {
+.contact__contents {
     margin-top: 2rem;
 }
 @media (max-width: 767px) {
-    .contact__content {
+    .contact__contents {
         margin-top: 3.8rem;
     }
 }
@@ -777,12 +770,11 @@ img {
         margin-top: 0;
     }
 }
-/* [修正] .contact__form の margin-top でテキストとフォーム間の余白を管理（外側→内側）。 */
-.contact__form {
+.contact__contents form {
     margin-top: 3.9rem;
 }
 @media (max-width: 767px) {
-    .contact__form {
+    .contact__contents form {
         margin-top: 3.4rem;
     }
 }
@@ -792,9 +784,6 @@ img {
 @media (max-width: 767px) {
     .form-area {
         flex-direction: column;
-        /* [修正] row-gap を削除し、SP 縦並び時の dt・dd 間の間隔は
-                 dt の padding-bottom で管理する（外側→内側）。
-                 label に margin-top を持たせる「内側→外側」パターンを廃止。 */
         row-gap: 0;
     }
 }
@@ -820,8 +809,6 @@ img {
         height: initial;
         font-size: 1.8rem;
         line-height: calc(33 / 18);
-        /* [修正] SP での dt→dd 間の余白を dt の padding-bottom で管理（外側→内側）。
-                 label に margin-top を指定するパターンを廃止。 */
         padding-bottom: 0.2rem;
     }
 }
@@ -848,8 +835,6 @@ img {
     word-break: break-word;
     resize: none;
 }
-/* [修正] .form-submit-area の margin-top でフォーム本体とボタン間の余白を管理（外側→内側）。
-         子要素 .form-submit に margin-top を持たせるパターンを廃止。 */
 .form-submit-area {
     margin-top: 4.9rem;
     display: flex;
@@ -857,8 +842,6 @@ img {
     width: 100%;
     text-align: center;
 }
-
-/* --- 送信ボタン共通設定 --- */
 .form-submit {
     width: 20rem;
     height: 5rem;
@@ -881,7 +864,6 @@ img {
         width: 33.5rem;
         height: 4.1rem;
         font-size: 2rem;
-        /* [修正] margin-top: 0 を削除。ボタン上の余白は親 .form-submit-area の margin-top で管理済み。 */
     }
     .form-submit:hover {
         background: var(--color-main) !important;
@@ -976,9 +958,6 @@ img {
         text-align: center;
     }
 }
-
-/* [修正] PC での .footer__sns との間隔は親 .footer__bottom の gap で管理。
-         SP のみ .footer__sns の margin-top で個別管理（gap: 0 のため）。 */
 .footer__sns {
     display: flex;
     justify-content: center;
